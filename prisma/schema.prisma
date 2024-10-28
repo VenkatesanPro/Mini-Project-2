@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Card {
+  id  String @unique @default(cuid())
+  image_url String
+  title    String
+  rating   String
+  location String
+}
